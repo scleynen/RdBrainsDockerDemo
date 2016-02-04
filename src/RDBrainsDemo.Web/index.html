@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html ng-app="rdBrainsDemo">
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+
+<body ng-controller="ProductsController">
+
+    <div>
+        <ul>
+            <li ng-repeat="product in products">
+                <span>{{product.Name}}</span>
+            </li>
+        </ul>
+
+        <script src="/node_modules/angular/angular.js"></script>
+        <script src="/js/controllers.js"></script>
+    </div>
+</body>
+</html>

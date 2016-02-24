@@ -17,18 +17,18 @@ namespace RDBrainsDemo.Data
             _productList.Add(new Product()
             {
                 Id = 1,
-                Name = "Microsoft Lumia 950",
-                Price = 550,
-                Description = "Microsoft Lumia 950 - Windows 10..."
+                Name = "Product1",
+                Price = 100,
+                Description = "Description of product1"
 
             });
 
             _productList.Add(new Product()
             {
                 Id = 2,
-                Name = "Iphone 6s",
-                Price = 700,
-                Description = "IOS 8"
+                Name = "Product2",
+                Price = 1000,
+                Description = "Ver expensive product"
 
             });
 
@@ -36,9 +36,9 @@ namespace RDBrainsDemo.Data
             _productList.Add(new Product()
             {
                 Id = 3,
-                Name = "Samsung Galaxy S6",
-                Price = 550,
-                Description = "Android Lollipop"
+                Name = "Product3",
+                Price = 5,
+                Description = "Very cheap product"
 
             });
 

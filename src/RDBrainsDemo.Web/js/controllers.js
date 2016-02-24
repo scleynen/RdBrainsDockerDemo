@@ -1,15 +1,23 @@
-﻿var rdBrainsApp = angular.module('rdBrainsDemo', []);
+﻿var shopControllers = angular.module('shopControllers', []);
 
-rdBrainsApp.config(['$httpProvider', function ($httpProvider) {
-    $httpProvider.defaults.useXDomain = true;
-    delete $httpProvider.defaults.headers.common['X-Requested-With'];
-}
-]);
+shopControllers.controller('CatalogCtrl', ['$scope', '$http',
+  function ($scope, $http) {
 
-rdBrainsApp.controller('ProductsController', function ($scope, $http) {
+      $scope.addCart = function (product) {
+          $http.post("/api/cart/addCart/" + product);
+      };
 
-        $http.get("http://192.168.99.100:5001/api/products")
-        .then(function (response) { $scope.products = response.data; });
-    });
+      $http.get('api/products').success(function (data) {
+          $scope.products = data;
+      });
+  }]);
 
-
+shopControllers.controller('CartCtrl', ['$scope', '$http',
+  function ($scope, $http) {
+      $http.get('api/cart/getCart').success(function (data) {
+          $scope.cartItems = data;
+      });
+      $http.get('api/products').success(function (data) {
+          $scope.products = data;
+      });
+  }]);

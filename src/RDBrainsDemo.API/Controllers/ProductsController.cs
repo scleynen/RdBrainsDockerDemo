@@ -22,14 +22,6 @@ namespace RDBrainsDemo.Controllers
         {
             return _productRepository.GetAll();
         }
-
-        // GET api/products/2
-        [HttpGet("{id}")]
-        public Product Get(int id)
-        {
-            return _productRepository.Get(id);
-        }
-
  
     }
 }

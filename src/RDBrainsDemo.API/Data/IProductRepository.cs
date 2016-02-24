@@ -11,6 +11,5 @@ namespace RDBrainsDemo.Data
 
         IEnumerable<Product> GetAll();
 
-        Product Get(int id);
     }
 }

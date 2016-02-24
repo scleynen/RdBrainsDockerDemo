@@ -1,0 +1,30 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "virtualMachineLocation": {
+            "value": "northeurope"
+        },
+        "imagePublisher": {
+            "value": "Canonical"
+        },
+        "imageOffer": {
+            "value": "UbuntuServer"
+        },
+        "imageSku": {
+            "value": "14.04.3-LTS"
+        },
+        "dnsNameForPublicIP": {
+            "value": "rdbrainsdemo"
+        },
+        "virtualMachineSize": {
+            "value": "Basic_A0"
+        },
+        "adminUsername": {
+            "value": "scyaq02"
+        },
+        "newStorageAccountName": {
+            "value": "rdbrainsdemoc33e5883"
+        }
+    }
+}

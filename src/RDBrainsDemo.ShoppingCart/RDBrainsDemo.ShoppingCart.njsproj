@@ -40,14 +40,18 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
+    <None Include="CustomDockerProfile.pubxml" />
     <Content Include="Dockerfile">
       <SubType>Content</SubType>
     </Content>
     <Content Include="package.json" />
+    <Content Include="Properties\PublishProfiles\CustomDockerProfile-publish.ps1" />
     <Content Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />
+    <Folder Include="Properties\" />
+    <Folder Include="Properties\PublishProfiles\" />
     <Folder Include="routes\" />
   </ItemGroup>
   <ItemGroup>

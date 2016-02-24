@@ -45,4 +45,4 @@ docker run --rm `
   --volume=${host_vol}:/src `
   --publish 4000:4000 `
   $DOCKER_IMAGE_NAME `
-  serve --watch --drafts --force_polling -H 0.0.0.0
+  serve --watch --drafts --force_polling -H 0.0.0

@@ -1,0 +1,34 @@
+logging.level.: INFO
+#logging.level.org.springframework: TRACE
+#logging.level.org.springframework.beans: TRACE
+#logging.level.com.netflix: TRACE
+#logging.level.com.netflix.servo.publish.MonitorRegistryMetricPoller: INFO
+
+ribbon:
+  eureka:
+    enabled: false
+
+zuul:
+  routes:
+    productsApi:
+      path: /api/products/**
+      stripPrefix: false
+      serviceId: productsApi
+    cartApi:
+      path: /api/cart/**
+      serviceId: cartApi
+    ui:
+      path: /** 
+      serviceId: ui
+
+productsApi:
+  ribbon:
+    listOfServers: demoapi:5001
+
+cartApi:
+  ribbon:
+    listOfServers: democart:5002
+
+ui:
+  ribbon:
+      listOfServers: demoweb:80

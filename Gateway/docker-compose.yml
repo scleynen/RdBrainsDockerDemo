@@ -1,0 +1,24 @@
+gateway:
+  container_name: "demogateway"
+  image: scyaq02/demogateway
+  ports:
+    - 80:8080
+
+web:
+  container_name: "demoweb"
+  image: scyaq02/demoweb
+  command: /usr/sbin/apache2ctl -D FOREGROUND
+
+cart:
+  container_name: "democart"
+  image: scyaq02/democart
+  
+api:
+  container_name: "demoapi"
+  image: scyaq02/demoapi
+  volumes:
+    - /app/wwwroot/datafile
+
+session:
+  container_name: "demoredis"
+  image: redis

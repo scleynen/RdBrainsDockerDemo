@@ -1,24 +1,36 @@
-gateway:
-  container_name: "demogateway"
-  image: scyaq02/demogateway
-  ports:
-    - 80:8080
+version: '2'
 
-web:
-  container_name: "demoweb"
-  image: scyaq02/demoweb
-  command: /usr/sbin/apache2ctl -D FOREGROUND
-
-cart:
-  container_name: "democart"
-  image: scyaq02/democart
+services:
+  gateway:
+    container_name: "demogateway"
+    image: scyaq02/demogateway
+    ports:
+      - 80:8080
+    networks:
+      - demovm
+  web:
+    container_name: "demoweb"
+    image: scyaq02/demoweb
+    command: /usr/sbin/apache2ctl -D FOREGROUND
+    networks:
+      - demovm
+  cart:
+    container_name: "democart"
+    image: scyaq02/democart
+    networks:
+      - demovm
+  api:
+    container_name: "demoapi"
+    image: scyaq02/demoapi
+    networks:
+      - demovm
+  session:
+    container_name: "demoredis"
+    image: redis
+    networks:
+      - demovm
   
-api:
-  container_name: "demoapi"
-  image: scyaq02/demoapi
-  volumes:
-    - /app/wwwroot/datafile
-
-session:
-  container_name: "demoredis"
-  image: redis
+networks:
+  demovm:
+    external:
+      name: demonw
